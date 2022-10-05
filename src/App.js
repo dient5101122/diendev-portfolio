@@ -1,7 +1,14 @@
+import Header from '~/components/Header';
+import classNames from 'classnames/bind';
+import styles from './App.module.scss';
+
+const cx = classNames.bind(styles);
+
 function App() {
     return (
-        <div className="App">
-            <h1>Portfolio</h1>
+        <div className={cx('app')}>
+            <Header />
+            <div className={cx('container')}></div>
         </div>
     );
 }
