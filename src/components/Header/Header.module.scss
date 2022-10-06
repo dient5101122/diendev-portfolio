@@ -133,15 +133,3 @@
 .headerbg--active {
     background-color: var(--white-color);
 }
-
-// grid
-.grid {
-    width: 100%;
-    display: block;
-    padding: 0;
-}
-
-.grid.wide {
-    max-width: 1200px;
-    margin: 0 auto;
-}

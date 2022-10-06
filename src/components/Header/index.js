@@ -1,4 +1,7 @@
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+
 import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
@@ -124,19 +127,12 @@ function Header() {
                                     htmlFor="checkbox"
                                     className={cx('toggle-label')}
                                 >
-                                    <i
-                                        className={cx(
-                                            'fa-solid',
-                                            'fa-moon theme-dark',
-                                        )}
-                                    ></i>
-                                    <i
-                                        className={cx(
-                                            'fa-solid',
-                                            'fa-sun',
-                                            'theme-light',
-                                        )}
-                                    ></i>
+                                    <i className={cx('theme-dark')}>
+                                        <FontAwesomeIcon icon={faMoon} />
+                                    </i>
+                                    <i className={cx('theme-light')}>
+                                        <FontAwesomeIcon icon={faSun} />
+                                    </i>
                                     <div className={cx('toggle-ball')}></div>
                                 </label>
                             </label>

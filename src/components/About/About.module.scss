@@ -1,0 +1,49 @@
+.about {
+    background-color: var(--white-color);
+}
+
+.about__content {
+    height: auto;
+}
+
+.about-title__name {
+}
+
+.about-me,
+.education,
+.contact__info-form {
+    letter-spacing: var(--spacing);
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 48px 0 12px;
+    text-transform: capitalize;
+}
+
+.about-me__description {
+    font-size: 1.8rem;
+    color: var(--textsub-color);
+    line-height: 2.7rem;
+}
+
+.education__desc {
+}
+
+.education__times {
+    font-size: 1.8rem;
+    color: var(--textsub-color);
+    margin: 10px 0;
+    line-height: 2.7rem;
+}
+
+.education__university {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    display: block;
+    font-weight: 700;
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    color: var(--text-color);
+    margin: 10px 0;
+}

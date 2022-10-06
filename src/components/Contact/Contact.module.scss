@@ -1,0 +1,39 @@
+.contact {
+    background-color: var(--background-color-skill);
+}
+.contact__info-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-icon {
+    display: inline-block;
+    width: 30px;
+}
+
+.contact__info-list {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    margin-top: 48px;
+}
+
+.contact-p {
+    padding: 10px 0;
+    margin: 8px 0;
+    color: var(--text-color);
+}
+
+.contact__me {
+    color: var(--primary-color);
+}
+
+.contact__me:hover {
+    color: rgba(233, 185, 73, 0.8);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+}
