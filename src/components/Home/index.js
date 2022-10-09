@@ -1,22 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import styles from './Home.module.scss';
-import images from '~/assets/images';
 import {
     faEnvelope,
     faSquarePhoneFlip,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
+import styles from './Home.module.scss';
+import images from '~/assets/images';
+
 const cx = classNames.bind(styles);
 
 function Home() {
     return (
-        <div className={cx('home', 'padding-top-bottom')}>
+        <div id="home" className={cx('home', 'padding-top-bottom')}>
             <div className={cx('grid', 'wide')}>
                 <div className={cx('home__content')}>
                     <div className={cx('row', 'sm-gutter')}>
-                        <div className={cx('col', 'l-6', 'col-full')}>
+                        <div
+                            className={cx('col', 'l-6', 'col-full')}
+                            data-aos="fade-right"
+                        >
                             <div className={cx('intro')}>
                                 <h1 className={cx('intro__title')}>
                                     I'm a web developer
@@ -93,6 +97,7 @@ function Home() {
                                 'col-full',
                                 'avatar-on-mobile-tablet',
                             )}
+                            data-aos="fade-left"
                         >
                             <div className={cx('intro__image')}>
                                 <img

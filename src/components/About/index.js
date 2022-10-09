@@ -15,14 +15,17 @@ function About() {
         >
             <div className={cx('grid', 'wide')}>
                 <div className={cx('about__content', 'l-o-1')}>
-                    <div className={cx('about-title')}>
+                    <div className={cx('about-title')} data-aos="zoom-in">
                         <h2 className={cx('about-title__name', 'title__name')}>
                             About me
                         </h2>
                         <div className={cx('title__underline')}></div>
                     </div>
                     <div className={cx('row', 'sm-gutter')}>
-                        <div className={cx('col', 'l-7')}>
+                        <div
+                            className={cx('col', 'l-7')}
+                            data-aos="zoom-in-right"
+                        >
                             <h3 className={cx('about-me')}>Get To Know Me!</h3>
                             <div className={cx('about-me__description')}>
                                 My name is Dien.
@@ -36,7 +39,10 @@ function About() {
                                 even is full-stack development.
                             </div>
                         </div>
-                        <div className={cx('col', 'l-5')}>
+                        <div
+                            className={cx('col', 'l-5')}
+                            data-aos="zoom-in-left"
+                        >
                             <h3 className={cx('education')}>Education</h3>
                             <div className={cx('education__desc')}>
                                 <div className={cx('education__times')}>

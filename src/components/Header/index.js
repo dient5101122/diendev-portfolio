@@ -1,14 +1,81 @@
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import {
+    faBarsStaggered,
+    faMoon,
+    faSun,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import { useState, useRef, useEffect } from 'react';
 
 import styles from './Header.module.scss';
+import Modal from '~/components/Modal';
+import { category } from '~/data';
 
 const cx = classNames.bind(styles);
 
+const categorys = category;
+
+const CategoryId = ({ category }) => (
+    <li
+        className={cx(
+            'header__navbar-item',
+            'header__navbar-item--separate',
+            'hide-on-mobile-tablet',
+        )}
+    >
+        <a
+            href={`#` + category.idProp}
+            className={cx('header__navbar-item-link')}
+        >
+            <span className={cx('header__navbar-figure')}>
+                {category.categoryId + `.`}
+            </span>
+            {category.name}
+        </a>
+    </li>
+);
+
 function Header() {
+    const [isActive, setIsActive] = useState(false);
+    const [isClassName, setIsClassName] = useState(false);
+    const [heightCurrent, setHeightCurrent] = useState(
+        window.scrollY || document.documentElement.scrollTop,
+    );
+
+    const header = useRef();
+    const headerMenu = useRef();
+
+    useEffect(
+        (document.onscroll = () => {
+            setHeightCurrent(
+                window.scrollY || document.documentElement.scrollTop,
+            );
+
+            const headerHeight = header.current.offsetHeight;
+            const newHeight = headerHeight - heightCurrent;
+
+            let newHeaderHeight = newHeight > 0 ? newHeight : 0;
+
+            if (newHeaderHeight < 40) {
+                setIsClassName(true);
+            } else {
+                setIsClassName(false);
+            }
+        }),
+        [],
+    );
+
+    const showModal = () => {
+        setIsActive(true);
+    };
+    const className = 'headerbg--active';
+    const diendev = '<DienDev/>';
     return (
-        <header className={cx('header')}>
+        <header
+            id="header"
+            className={cx('header', { [className]: isClassName })}
+            ref={header}
+        >
             {/* Begin: nav */}
             <div className={cx('grid', 'wide')}>
                 <nav className={cx('header__navbar')}>
@@ -17,101 +84,24 @@ function Header() {
                             href="#home"
                             className={cx('header__navbar-logo-link')}
                         >
-                            DienDev
+                            {diendev}
                         </a>
                     </div>
                     <ul className={cx('header__navbar-list')}>
-                        <li
-                            className={cx(
-                                'header__navbar-item',
-                                'header__navbar-item--separate',
-                                'hide-on-mobile-tablet',
-                            )}
-                        >
-                            <a
-                                href="#home"
-                                className={cx('header__navbar-item-link')}
-                            >
-                                <span className={cx('header__navbar-figure')}>
-                                    01.
-                                </span>
-                                Home
-                            </a>
-                        </li>
-                        <li
-                            className={cx(
-                                'header__navbar-item',
-                                'header__navbar-item--separate',
-                                'hide-on-mobile-tablet',
-                            )}
-                        >
-                            <a
-                                href="#about"
-                                className={cx('header__navbar-item-link')}
-                            >
-                                <span className={cx('header__navbar-figure')}>
-                                    02.
-                                </span>
-                                About
-                            </a>
-                        </li>
-                        <li
-                            className={cx(
-                                'header__navbar-item',
-                                'header__navbar-item--separate',
-                                'hide-on-mobile-tablet',
-                            )}
-                        >
-                            <a
-                                href="#skill"
-                                className={cx('header__navbar-item-link')}
-                            >
-                                <span className={cx('header__navbar-figure')}>
-                                    03.
-                                </span>
-                                Skill
-                            </a>
-                        </li>
-                        <li
-                            className={cx(
-                                'header__navbar-item',
-                                'header__navbar-item--separate',
-                                'hide-on-mobile-tablet',
-                            )}
-                        >
-                            <a
-                                href="#portfolio"
-                                className={cx('header__navbar-item-link')}
-                            >
-                                <span className={cx('header__navbar-figure')}>
-                                    04.
-                                </span>
-                                Portfolio
-                            </a>
-                        </li>
-                        <li
-                            className={cx(
-                                'header__navbar-item',
-                                'hide-on-mobile-tablet',
-                            )}
-                        >
-                            <a
-                                href="#contact"
-                                className={cx('header__navbar-item-link')}
-                            >
-                                <span className={cx('header__navbar-figure')}>
-                                    05.
-                                </span>
-                                Contact
-                            </a>
-                        </li>
-                        {/* mobile and tablet */}
+                        {categorys.map((category) => (
+                            <CategoryId key={category.id} category={category} />
+                        ))}
+                        {isActive && <Modal handleClose={setIsActive} />}
                         <button
-                            className={cx('header__menu-mobile', 'js-menu')}
+                            ref={headerMenu}
+                            className={cx('header__menu-mobile', 'js-menu', {
+                                [className]: isClassName,
+                            })}
+                            onClick={showModal}
                         >
-                            <i
-                                className={cx('fa-solid', 'fa-bars-staggered')}
-                            ></i>
+                            <i className={cx()}>
+                                <FontAwesomeIcon icon={faBarsStaggered} />
+                            </i>
                         </button>
                         <div className={cx('toggle-theme')}>
                             <label
@@ -122,6 +112,11 @@ function Header() {
                                     type="checkbox"
                                     className={cx('toggle-checkbox')}
                                     id="checkbox"
+                                    onChange={() => {
+                                        document.body.classList.toggle(
+                                            'dark-theme',
+                                        );
+                                    }}
                                 />
                                 <label
                                     htmlFor="checkbox"

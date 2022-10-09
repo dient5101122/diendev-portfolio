@@ -14,7 +14,7 @@ function Contact() {
     return (
         <div id="contact" className={cx('contact', 'padding-top-bottom')}>
             <div className={cx('grid', 'wide')}>
-                <div className={cx('contact__title')}>
+                <div className={cx('contact__title')} data-aos="zoom-in">
                     <h2 className={cx('contact__title', 'title__name')}>
                         Contact
                     </h2>
@@ -23,7 +23,10 @@ function Contact() {
                 <div className={cx('row', 'sm-gutter')}>
                     <div className={cx('col', 'l-12', 'm-12', 'c-12')}>
                         <div className={cx('contact__info-frame')}>
-                            <div className={cx('contact__info-list')}>
+                            <div
+                                className={cx('contact__info-list')}
+                                data-aos="fade-up"
+                            >
                                 <p className={cx('contact-p')}>
                                     <i className={cx('contact-icon')}>
                                         <FontAwesomeIcon icon={faLocationDot} />

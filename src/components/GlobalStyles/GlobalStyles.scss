@@ -37,6 +37,7 @@ body {
     padding: 0;
     line-height: 1.6rem;
     font-size: 1.6rem;
+    scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     font-family: 'Nunito Sans', sans-serif;
@@ -130,7 +131,7 @@ body {
 }
 
 /* >= Tablet */
-@media (min-width: 740px) {
+@media (min-width: 46.25rem) {
     .row {
         margin-left: -8px;
         margin-right: -8px;
@@ -161,7 +162,7 @@ body {
 }
 
 /* PC medium resolution > */
-@media (min-width: 1113px) {
+@media (min-width: 69.563rem) {
     .row {
         margin-left: -12px;
         margin-right: -12px;
@@ -185,6 +186,7 @@ body {
         display: none;
     }
     .l-3,
+    .l-4,
     .l-5,
     .l-6,
     .l-7,
@@ -198,6 +200,10 @@ body {
     .l-5 {
         flex: 0 0 41.66667%;
         max-width: 41.66667%;
+    }
+    .l-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
     .l-6 {
         flex: 0 0 50%;
@@ -217,14 +223,14 @@ body {
 }
 
 /* Tablet - PC low resolution */
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 46.25rem) and (max-width: 63.938rem) {
     .wide {
         width: 644px;
     }
 }
 
 /* > PC low resolution */
-@media (min-width: 1024px) and (max-width: 1239px) {
+@media (min-width: 64rem) and (max-width: 77.438rem) {
     .wide {
         width: 984px;
     }
@@ -253,6 +259,7 @@ body {
         display: none;
     }
     .wide .l-3,
+    .wide .l-4,
     .wide .l-5,
     .wide .l-6,
     .wide .l-7,
@@ -262,6 +269,10 @@ body {
     .wide .l-3 {
         flex: 0 0 25%;
         max-width: 25%;
+    }
+    .wide .l-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
     }
     .wide .l-5 {
         flex: 0 0 41.66667%;

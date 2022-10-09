@@ -17,3 +17,38 @@
     user-select: none;
     color: var(--text-color);
 }
+
+.margin-t27-pc {
+    margin-top: 27px;
+}
+
+/* Responsive */
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .margin-t27 {
+        margin-top: 27px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+    .header__list {
+        width: 127%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .header__menu-item {
+        font-size: 3rem;
+    }
+    .margin-top-16 {
+        margin-top: 16px;
+    }
+}
