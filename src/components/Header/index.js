@@ -45,6 +45,7 @@ function Header() {
     const header = useRef();
     const headerMenu = useRef();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(
         (document.onscroll = () => {
             setHeightCurrent(
