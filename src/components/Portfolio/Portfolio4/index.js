@@ -4,6 +4,10 @@ import styles from './Portfolio4.module.scss';
 const cx = classNames.bind(styles);
 
 function Portfolio4(id4) {
+    function handlePreventDefault(e) {
+        e.preventDefault();
+    }
+
     return (
         <div className={cx('padding-top-bottom', 'border-bottom-dashed')}>
             <div className={cx('row', 'sm-gutter')}>
@@ -51,9 +55,12 @@ function Portfolio4(id4) {
                             >
                                 <a
                                     href={id4.id4.linkLive}
-                                    target="_blank"
                                     rel="noreferrer"
-                                    className={cx('portfolio-project__link-ls')}
+                                    className={cx(
+                                        'portfolio-project__link-ls',
+                                        'folio-project__link-ls--preventDefault',
+                                    )}
+                                    onClick={handlePreventDefault}
                                 >
                                     Live
                                 </a>
@@ -71,7 +78,10 @@ function Portfolio4(id4) {
                                     href={id4.id4.linkGit}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className={cx('portfolio-project__link-ls')}
+                                    className={cx(
+                                        'portfolio-project__link-ls',
+                                        'portfolio-project__link-ls-hover',
+                                    )}
                                 >
                                     Source
                                 </a>
