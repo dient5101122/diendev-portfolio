@@ -61,10 +61,6 @@
     color: var(--primary-color);
 }
 
-.headerbg--active {
-    background-color: var(--white-color);
-}
-
 /* Toggle theme */
 .toggle-theme {
     font-size: 2.2rem;
@@ -132,6 +128,10 @@
     cursor: pointer;
     padding: 16px;
     display: none;
+}
+
+.headerbg--active {
+    background-color: var(--white-color);
 }
 
 // Responsive
