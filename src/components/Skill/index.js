@@ -119,9 +119,7 @@ function Skill() {
                                         <FontAwesomeIcon icon={faUikit} />
                                     </i>
                                 </span>
-                                <span className={cx('skill__name')}>
-                                    Material UI
-                                </span>
+                                <span className={cx('skill__name')}>MUI</span>
                             </div>
                         </div>
                         <div

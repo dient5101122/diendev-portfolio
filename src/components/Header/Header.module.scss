@@ -171,4 +171,17 @@
     .header__menu-item {
         font-size: 3rem;
     }
+    .header__navbar-list {
+        display: contents;
+    }
+    .header__menu-mobile {
+        display: inline-block;
+        padding: 8px;
+    }
+    .header__navbar {
+        margin-right: 48px;
+    }
+    .toggle-theme {
+        top: 0px;
+    }
 }

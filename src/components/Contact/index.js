@@ -49,7 +49,7 @@ function Contact() {
                                     <i className={cx('contact-icon')}>
                                         <FontAwesomeIcon icon={faEnvelope} />
                                     </i>
-                                    Email:
+                                    Email:{' '}
                                     <a
                                         className={cx('contact__me')}
                                         href="mailto:ptdien.developer@gmail.com"
