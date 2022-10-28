@@ -25,7 +25,7 @@ function Skill() {
                         <div className={cx('title__underline')}></div>
                     </div>
                     <div
-                        className={cx('row', 'sm-gutter')}
+                        className={cx('row', 'sm-gutter', 'margin-rl-16')}
                         data-aos="flip-down"
                     >
                         <div

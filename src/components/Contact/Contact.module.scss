@@ -37,3 +37,28 @@
     display: flex;
     flex-direction: column;
 }
+
+// Responsive
+/* Mobile & Tablet */
+@media (max-width: 63.9375em) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+    .contact__info-frame {
+        margin-left: 16px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    .hide-on-tablet {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 46.1875em) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
